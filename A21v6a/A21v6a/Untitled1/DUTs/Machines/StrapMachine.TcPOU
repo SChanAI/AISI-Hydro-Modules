@@ -52,7 +52,6 @@ enable := bEnable AND robot1.strapSafetyIn AND robot2.strapSafetyIn;
 
 CASE step OF
 	SETUP:
-		//busy := FALSE;
 		IF error THEN
 			enable := FALSE;
 			execute := FALSE;
@@ -78,8 +77,6 @@ CASE step OF
 	WAIT: //due to the use of DC motors instead of stepper motors in the machine, a short delay is required before next strap
 		IF done THEN
 			holdPost.IN := TRUE;
-			enable := FALSE;
-			execute := FALSE;
 		END_IF
 		
 		IF holdPost.Q THEN
@@ -139,7 +136,9 @@ start := TRUE;]]></ST>
       <LineId Id="1853" Count="1" />
       <LineId Id="1856" Count="0" />
       <LineId Id="1930" Count="0" />
-      <LineId Id="1857" Count="68" />
+      <LineId Id="1857" Count="14" />
+      <LineId Id="1873" Count="24" />
+      <LineId Id="1900" Count="25" />
       <LineId Id="576" Count="0" />
     </LineIds>
     <LineIds Name="StrapMachine.clear">
